@@ -527,7 +527,7 @@ body .mblog {
   background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_twitter_black_48dp.png');
 }
 .social-btn__github {
-  background-image: url('images/github-box.png');
+  background-image: url('../images/github-box.png');
 }
 .social-btn__gplus {
   background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_gplus_black_48dp.png');
@@ -551,7 +551,7 @@ body .mblog {
 }
 
 .contact-card-image.mdl-card {
-  background: url('images/logo.png') center / cover;
+  background: url('../images/logo.png') center / cover;
 }
 
 .contact-card-image > .mdl-card__actions {
