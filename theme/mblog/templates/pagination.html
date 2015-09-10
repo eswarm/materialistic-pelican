@@ -1,11 +1,23 @@
 {% if DEFAULT_PAGINATION %}
-<p class="paginator">
+<div class="mblog__posts mdl-grid">
+<nav class="m-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     {% if articles_page.has_previous() %}
-        <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&laquo;</a>
+    <a href="{{ SITEURL }}/{{ articles_previous_page.url }}" class="m-nav__button">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+            <i class="material-icons">arrow_back</i>
+        </button>
+        Newer
+    </a>
     {% endif %}
-    Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+    <div class="section-spacer"></div>
     {% if articles_page.has_next() %}
-        <a href="{{ SITEURL }}/{{ articles_next_page.url }}">&raquo;</a>
+    <a href="{{ SITEURL }}/{{ articles_next_page.url }}" class="m-nav__button">
+        Older
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+            <i class="material-icons">arrow_forward</i>
+        </button>
+    </a>
     {% endif %}
-</p>
+</nav>
+</div>
 {% endif %}

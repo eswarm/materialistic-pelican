@@ -30,9 +30,8 @@ body .mblog {
           flex-shrink: 0;
 }
 
-
 .mdl-layout .mdl-layout__content {
-  padding-top: 40px;
+  padding-top: 20px;
   position: relative;
   -webkit-overflow-scrolling: touch;
 }
@@ -418,12 +417,14 @@ body .mblog {
           align-items: center;
   margin-bottom: 16px;
 }
+
 .mblog--blogpost .comments .comment > .comment__header > .comment__avatar {
   width: 48px;
   height: 48px;
   border-radius: 24px;
   margin-right: 16px;
 }
+
 .mblog--blogpost .comments .comment > .comment__header > .comment__author {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -490,7 +491,7 @@ body .mblog {
   z-index: 10;
 }
 .mblog .amazing .mdl-card__title {
-  background-color: #263238;
+  /*background-color: #263238;*/
 }
 .mblog .minilogo {
   width: 44px;
@@ -566,6 +567,7 @@ body .mblog {
   font-weight: 500;
 }
 
+@media screen and (min-width: 1024px) {
 aside {
   width: 25%;
   height: 100%;
@@ -575,6 +577,14 @@ aside {
   padding: 40px;
   padding-top: 50px;
 }
+}
+@media screen and (max-width: 1024px) {
+aside {
+    display : none;
+}
+}
+
+
 
 .title.mdl-card {
  min-height: 0px;
@@ -618,9 +628,9 @@ color : black;
   margin: 0 auto;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
-   flex-shrink: 0;
-   padding: 20px;
-   margin-top: 20px;
+  flex-shrink: 0;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .nav-header.mdl-card {

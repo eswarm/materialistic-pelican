@@ -10,11 +10,10 @@
 <!-- <h2>All articles</h2> -->
 {% endblock %}
 
-
 {% for article in articles_page.object_list %}
 
 <div class="mdl-card amazing mdl-cell mdl-cell--12-col">
-    <div class="mdl-card__title mdl-color-text--grey-50">
+    <div class="mdl-card__title mdl-color-text--grey-50 mdl-color--primary">
         <h3 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
     </div>
 
@@ -26,11 +25,13 @@
         <div class="minilogo"></div>
         <div>
             <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
+            <!--
             <address class="vcard author">By
             {% for author in article.authors %}
-                <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+                {{ author }}
             {% endfor %}
             </address>
+            -->
         </div>
     </div>
 </div>
