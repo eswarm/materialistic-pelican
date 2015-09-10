@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="mblog mdl-layout mdl-js-layout">
+<main class="mdl-layout__content">
+<div class="mblog__posts mdl-grid">
+
+<section id="content">
+{% block content_title %}
+<!-- <h2>All articles</h2> -->
+{% endblock %}
+
+
+{% for article in articles_page.object_list %}
+
+<div class="mdl-card amazing mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__title mdl-color-text--grey-50">
+        <h3 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
+    </div>
+
+    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+      {{ article.summary }}
+    </div>
+
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+        <div class="minilogo"></div>
+        <div>
+            <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
+            <address class="vcard author">By
+            {% for author in article.authors %}
+                <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+            {% endfor %}
+            </address>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+{% endif %}
+</section><!-- /#content -->
+{% endblock content %}
+
+</div>
+</main>
+</div>

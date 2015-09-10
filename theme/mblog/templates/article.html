@@ -1,0 +1,94 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+  {{ super() }}
+  {% if article.description %}
+    <meta name="description" content="{{article.description}}" />
+  {% endif %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" content="{{tag}}" />
+  {% endfor %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="mblog mblog--blogpost mdl-layout mdl-js-layout">
+        <main class="mdl-layout__content">
+            <div class="m-back">
+                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="index.html" title="go back" role="button">
+                    <i class="material-icons" role="presentation">arrow_back</i>
+                </a>
+            </div>
+            <div class="mblog__posts mdl-grid">
+                <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__media mdl-color-text--grey-50">
+                     <!-- entry title -->
+                     <h3 class="entry-title">
+                      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+                      title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
+                    </div>
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                        <div class="minilogo"></div>
+                        <div>
+
+                         <abbr class="published" title="{{ article.date.isoformat() }}">
+                          {{ article.locale_date }}
+                         </abbr>
+                         {% if article.modified %}
+                         <abbr class="modified" title="{{ article.modified.isoformat() }}">
+                          {{ article.locale_modified }}
+                         </abbr>
+                         <address class="vcard author">
+                         {% endif %}
+                         {% if article.authors %}
+                          By {% for author in article.authors %}
+                          <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+                          {% endfor %}
+                         </address>
+                         {% endif %}
+                            <!--
+                            <strong>The Newist</strong>
+                            <span>2 days ago</span>
+                           -->
+                        </div>
+                        <div class="section-spacer"></div>
+                        <div class="meta__favorites">
+                            425 <i class="material-icons" role="presentation">favorite</i>
+                            <span class="visuallyhidden">favorites</span>
+                        </div>
+                        <div>
+                            <i class="material-icons" role="presentation">bookmark</i>
+                            <span class="visuallyhidden">bookmark</span>
+                        </div>
+                        <div>
+                            <i class="material-icons" role="presentation">share</i>
+                            <span class="visuallyhidden">share</span>
+                        </div>
+                    </div>
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+                         {{ article.content }}
+                    </div>
+                </div>
+
+                <nav class="m-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+                    <a href="index.html" class="m-nav__button">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                            <i class="material-icons">arrow_back</i>
+                        </button>
+                        Newer
+                    </a>
+                    <div class="section-spacer"></div>
+                    <a href="index.html" class="m-nav__button">
+              Older
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+              </button>
+            </a>
+                </nav>
+            </div>
+        </main>
+        <div class="mdl-layout__obfuscator"></div>
+    </div>
+{% endblock %}

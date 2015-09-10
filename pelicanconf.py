@@ -3,12 +3,12 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Eswar Malla'
-SITENAME = u"eswar's personal blog"
+SITENAME = u"Eswar's log"
 SITEURL = '.'
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Asia/Kolkata'
 
 DEFAULT_LANG = u'en'
 
@@ -26,10 +26,12 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('Github', 'https://github.com/eswarm'),
+		  ('Google plus', 'https://plus.google.com/102630360601349400454/about'),)
 
-DEFAULT_PAGINATION = 3
+DEFAULT_PAGINATION = 4
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
+
+USER_LOGO_URL = SITEURL + '/images/logo.png'
