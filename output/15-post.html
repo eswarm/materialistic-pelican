@@ -94,7 +94,7 @@
             </div>
             <div class="mblog__posts mdl-grid">
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50 mdl-color--primary">
+                    <div class="mdl-card__media mdl-color-text--grey-50 mdl-color--primary" style="background-image : url(theme/images/road_big.jpg);">
                      <!-- entry title -->
                      <h3 class="entry-title">
                       <a href="./15-post.html" rel="bookmark"
@@ -117,17 +117,95 @@
                            -->
                         </div>
                         <div class="section-spacer"></div>
+                        <!--
                         <div class="meta__favorites">
                             425 <i class="material-icons" role="presentation">favorite</i>
                             <span class="visuallyhidden">favorites</span>
                         </div>
+                       -->
                         <div>
                             <i class="material-icons" role="presentation">bookmark</i>
                             <span class="visuallyhidden">bookmark</span>
                         </div>
-                        <div>
-                            <i class="material-icons" role="presentation">share</i>
-                            <span class="visuallyhidden">share</span>
+
+                        <div id="share-section">
+
+                         <button id="share-button"
+                                 class="mdl-button mdl-js-button mdl-button--icon">
+                                 <i class="material-icons" role="presentation">share</i>
+                         </button>
+
+                         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                             for="share-button">
+
+
+<ul>
+
+<li class="social-btn__gplus">
+<!-- Google+ -->
+<a href="https://plus.google.com/share?url=15-post.html" target="_blank">
+				<img src="/theme/images/google-plus-box.png" alt="Google Plus" />
+</a>
+</li>
+
+<li class="social-btn__facebook">
+<!-- Facebook -->
+<a href="http://www.facebook.com/sharer.php?u=15-post.html" target="_blank">
+				<img src="/theme/images/facebook-box.png" alt="Facebook" />
+</a>
+</li>
+
+<li class="social-btn__linkedin">
+<!-- LinkedIn -->
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=15-post.html" target="_blank">
+				<img src="/theme/images/linkedin-box.png" alt="LinkedIn" />
+</a>
+</li>
+
+<li class="social-btn__pinterest">
+<!-- Pinterest -->
+<a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+				<img src="/theme/images/pinterest-box.png" alt="Pinterest" />
+</a>
+</li>
+
+<!-- Reddit -->
+<li class="social-btn__reddit">
+<a href="http://reddit.com/submit?url=15-post.html&amp;title=15 Post" target="_blank">
+				<img src="/theme/images/reddit.png" alt="Reddit" />
+</a>
+</li>
+
+<!-- Tumblr-->
+<li class="social-btn__tumblr">
+<a href="http://www.tumblr.com/share/link?url=15-post.html&amp;title=" target="_blank">
+				<img src="/theme/images/tumblr.png" alt="Tumblr" />
+</a>
+</li>
+
+<!-- Twitter -->
+<li class="social-btn__twitter">
+<a href="https://twitter.com/share?url=15-post.html&amp;text=;hashtags=" target="_blank">
+				<img src="/theme/images/twitter-box.png" alt="Twitter" />
+</a>
+</li>
+
+<!-- Email -->
+<li class="social-btn__email">
+<a href="mailto:?Subject=Simple Share Buttons&amp;Body=15 Post 15-post.html">
+				<img src="/theme/images/email-outline.png" alt="Email" />
+</a>
+</li>
+
+<!-- Print -->
+<li class="social-btn__printer">
+<a href="javascript:;" onclick="window.print()">
+				<img src="/theme/images/printer.png" alt="Print" />
+</a>
+</li>
+
+</ul>                         </ul>
+
                         </div>
                     </div>
                     <div class="mdl-color-text--grey-700 mdl-card__supporting-text">

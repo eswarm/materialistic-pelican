@@ -23,12 +23,21 @@
             </div>
             <div class="mblog__posts mdl-grid">
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50 mdl-color--primary">
+                 {% if article.titleimage %}
+                    <div class="mdl-card__media mdl-color-text--grey-50 mdl-color--primary" style="background-image : url({{ THEME_STATIC_DIR }}/images/{{ article.titleimage }});">
                      <!-- entry title -->
                      <h3 class="entry-title">
                       <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
                       title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
                     </div>
+                  {% else %}
+                  <div class="mdl-card__media mdl-color-text--grey-50 mdl-color--primary">
+                   <!-- entry title -->
+                   <h3 class="entry-title">
+                    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+                    title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
+                  </div>
+                  {% endif %}
                     <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
                         <div class="minilogo"></div>
                         <div>
@@ -56,17 +65,29 @@
                            -->
                         </div>
                         <div class="section-spacer"></div>
+                        <!--
                         <div class="meta__favorites">
                             425 <i class="material-icons" role="presentation">favorite</i>
                             <span class="visuallyhidden">favorites</span>
                         </div>
+                       -->
                         <div>
                             <i class="material-icons" role="presentation">bookmark</i>
                             <span class="visuallyhidden">bookmark</span>
                         </div>
-                        <div>
-                            <i class="material-icons" role="presentation">share</i>
-                            <span class="visuallyhidden">share</span>
+
+                        <div id="share-section">
+
+                         <button id="share-button"
+                                 class="mdl-button mdl-js-button mdl-button--icon">
+                                 <i class="material-icons" role="presentation">share</i>
+                         </button>
+
+                         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                             for="share-button">
+                          {% include 'share.html' %}
+                         </ul>
+
                         </div>
                     </div>
                     <div class="mdl-color-text--grey-700 mdl-card__supporting-text">

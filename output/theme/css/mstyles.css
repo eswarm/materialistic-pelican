@@ -524,14 +524,74 @@ body .mblog {
   opacity: 0.46;
   border-radius: 2px;
 }
-.social-btn__twitter {
-  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_twitter_black_48dp.png');
+
+.social-btn__email {
+   background-image : url('../images/email-outline.png');
+   width : 36px;
+   height :36px;
 }
+
+.social-btn__facebook {
+   background-image : url('../images/facebook-box.png');
+   width : 36px;
+   height :36px;
+}
+
 .social-btn__github {
   background-image: url('../images/github-box.png');
+  width : 36px;
+  height :36px;
 }
+
 .social-btn__gplus {
-  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_gplus_black_48dp.png');
+  background-image : url('../images/google-plus-box.png');
+  /* background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_gplus_black_48dp.png'); */
+  width : 36px;
+  height :36px;
+
+}
+
+.social-btn__linkedin {
+   background-image : url('../images/linkedin-box.png');
+   width : 36px;
+   height :36px;
+}
+
+.social-btn__pinterest {
+   background-image : url('../images/pinterest-box.png');
+   width : 36px;
+   height :36px;
+}
+
+.social-btn__printer {
+   background-image : url('../images/printer.png');
+   width : 36px;
+   height :36px;
+}
+
+.social-btn__reddit {
+   background-image : url('../images/reddit.png');
+   width : 36px;
+   height :36px;
+}
+
+.social-btn__tumblr {
+   background-image : url('../images/tumblr.png');
+   width : 36px;
+   height :36px;
+}
+
+.social-btn__twitter {
+   background-image : url('../images/twitter-box.png');
+   /* background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_twitter_black_48dp.png'); */
+   width : 36px;
+   height :36px;
+}
+
+.social-btn__facebook {
+  background-image : url('../images/google-plus-box.png');
+  width : 36px;
+  height :36px;
 }
 
 .social-btn__share {
