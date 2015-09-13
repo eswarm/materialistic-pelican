@@ -27,9 +27,14 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 
 # Social widget
 SOCIAL = (('Github', 'https://github.com/eswarm'),
-		  ('Google plus', 'https://plus.google.com/102630360601349400454/about'),)
+		  ('Google plus', 'https://plus.google.com/102630360601349400454/about'),
+          ('Twitter', 'https://twitter.com/eswar_001'))
 
 DEFAULT_PAGINATION = 4
+
+#NAVBAR_COLOR = '#263238'
+PRIMARY_COLOR = 'indigo'
+ACCENT_COLOR = 'light blue'
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True

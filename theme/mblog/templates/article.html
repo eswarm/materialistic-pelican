@@ -14,6 +14,21 @@
 {% endblock %}
 
 {% block content %}
+
+    <!-- from SO -->
+    <script type="text/javascript">
+            function bookmark() {
+                // Mozilla Firefox Bookmark
+                if ('sidebar' in window && 'addPanel' in window.sidebar) {
+                    window.sidebar.addPanel(location.href,document.title,"");
+                } else if( /*@cc_on!@*/false) { // IE Favorite
+                    window.external.AddFavorite(location.href,document.title);
+                } else { // webkit - safari/chrome
+                    alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+                }
+            };
+    </script>
+
     <div class="mblog mblog--blogpost mdl-layout mdl-js-layout">
         <main class="mdl-layout__content">
             <div class="m-back">
@@ -31,7 +46,7 @@
                       title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
                     </div>
                   {% else %}
-                  <div class="mdl-card__media mdl-color-text--grey-50 mdl-color--primary">
+                  <div class="mdl-card__title mdl-color-text--grey-50 mdl-color--primary">
                    <!-- entry title -->
                    <h3 class="entry-title">
                     <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
@@ -72,8 +87,10 @@
                         </div>
                        -->
                         <div>
+                        <button id="bookmark-button" class="mdl-button mdl-js-button mdl-button--icon" onclick="bookmark()">
                             <i class="material-icons" role="presentation">bookmark</i>
                             <span class="visuallyhidden">bookmark</span>
+                        </button>
                         </div>
 
                         <div id="share-section">
@@ -114,4 +131,5 @@
         </main>
         <div class="mdl-layout__obfuscator"></div>
     </div>
+
 {% endblock %}

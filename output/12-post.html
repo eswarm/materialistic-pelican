@@ -24,7 +24,8 @@
 
  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.css">
+ <link rel="stylesheet" href= https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-light_blue.min.css >
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="./theme/css/mstyles.css" />
 
 
@@ -41,30 +42,27 @@
                 <span class="contact-card-name">Eswar Malla</span>
             </div>
         </div>
-        <div class="mdl-card mdl-shadow--2dp">
+        <div class="contact-card mdl-card mdl-shadow--2dp">
             <div class="mdl-card__actions mdl-card--border">
                 <div class="social-buttons">
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__github">
-                        <span class="visuallyhidden">Google Plus</span>
-                    </button>
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-                        <span class="visuallyhidden">Github</span>
-                    </button>
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
-                        <span class="visuallyhidden">Twitter</span>
-                    </button>
+                   <a target="_blank" href="https://github.com/eswarm" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent social-anchors"> <i class="fa fa-github-square fa-lg"></i> </a>
+                   <a target="_blank" href="https://plus.google.com/102630360601349400454/about" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent social-anchors"> <i class="fa fa-google-plus-square fa-lg"></i> </a>
+                   <a target="_blank" href="https://twitter.com/eswar_001" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent social-anchors"> <i class="fa fa-twitter-square fa-lg"></i> </a>
                 </div>
             </div>
             <div class="mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__actions mdl-card--border">
-
-                    <h4> Categories </h4>
-                          <a href="./category/10.html">10</a>
-                          <a href="./category/11.html">11</a>
-                          <a href="./category/8.html">8</a>
-                          <a href="./category/9.html">9</a>
-                          <a href="./category/five.html">Five</a>
-
+                <div class="mdl-color-text--accent mdl-card__actions mdl-card--border">
+                    <h4 class="sub-title"> Categories </h4>
+                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/10.html">10</a>
+                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/11.html">11</a>
+                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/8.html">8</a>
+                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/9.html">9</a>
+                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/five.html">Five</a>
+                </div>
+            </div>
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-color-text--accent mdl-card__actions mdl-card--border">
+                    <h4 class="sub-title"> Tags </h4>
                 </div>
             </div>
           </div>
@@ -75,15 +73,30 @@
         <nav class="mdl-navigation">
             <div class="mdl-layout-spacer"></div>
             <span class="topLinks">
-                <a class="mdl-navigation__link" href="/">Home</a>
-                <a class="mdl-navigation__link" href="#">Projects</a>
-                <a class="mdl-navigation__link" href="#">About</a>
+                <a class="mdl-navigation__link" href="./index.html">Home</a>
+                <a class="mdl-navigation__link" href="./pages/projects.html">Projects</a>
+                <a class="mdl-navigation__link" href="./pages/about.html">About</a>
             </span>
         </nav>
     </div>
 
     <div class="mblog mdl-layout mdl-js-layout">
     <main class="mdl-layout__content">
+
+
+    <!-- from SO -->
+    <script type="text/javascript">
+            function bookmark() {
+                // Mozilla Firefox Bookmark
+                if ('sidebar' in window && 'addPanel' in window.sidebar) {
+                    window.sidebar.addPanel(location.href,document.title,"");
+                } else if( /*@cc_on!@*/false) { // IE Favorite
+                    window.external.AddFavorite(location.href,document.title);
+                } else { // webkit - safari/chrome
+                    alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+                }
+            };
+    </script>
 
     <div class="mblog mblog--blogpost mdl-layout mdl-js-layout">
         <main class="mdl-layout__content">
@@ -94,7 +107,7 @@
             </div>
             <div class="mblog__posts mdl-grid">
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-                  <div class="mdl-card__media mdl-color-text--grey-50 mdl-color--primary">
+                  <div class="mdl-card__title mdl-color-text--grey-50 mdl-color--primary">
                    <!-- entry title -->
                    <h3 class="entry-title">
                     <a href="./12-post.html" rel="bookmark"
@@ -124,8 +137,10 @@
                         </div>
                        -->
                         <div>
+                        <button id="bookmark-button" class="mdl-button mdl-js-button mdl-button--icon" onclick="bookmark()">
                             <i class="material-icons" role="presentation">bookmark</i>
                             <span class="visuallyhidden">bookmark</span>
+                        </button>
                         </div>
 
                         <div id="share-section">
@@ -139,70 +154,72 @@
                              for="share-button">
 
 
-<ul>
+<ul class="shareList">
 
-<li class="social-btn__gplus">
+<li>
 <!-- Google+ -->
-<a href="https://plus.google.com/share?url=12-post.html" target="_blank">
-				<img src="/theme/images/google-plus-box.png" alt="Google Plus" />
+<a href="https://plus.google.com/share?url={ 12-post.html }" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" alt="Google plus">
+<i class="fa fa-google-plus-square fa-3x"></i>
 </a>
 </li>
 
-<li class="social-btn__facebook">
+<li>
 <!-- Facebook -->
-<a href="http://www.facebook.com/sharer.php?u=12-post.html" target="_blank">
-				<img src="/theme/images/facebook-box.png" alt="Facebook" />
+<a href="http://www.facebook.com/sharer.php?u=12-post.html" target="_blank" alt="facebook">
+<i class="fa fa-facebook-square fa-3x"></i>
 </a>
 </li>
 
-<li class="social-btn__linkedin">
+<li>
 <!-- LinkedIn -->
-<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=12-post.html" target="_blank">
-				<img src="/theme/images/linkedin-box.png" alt="LinkedIn" />
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=12-post.html" target="_blank" alt="LinkedIn">
+<i class="fa fa-linkedin-square fa-3x"></i>
 </a>
 </li>
 
-<li class="social-btn__pinterest">
+<li>
 <!-- Pinterest -->
-<a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
-				<img src="/theme/images/pinterest-box.png" alt="Pinterest" />
+<a alt="Pinterest" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+<i class="fa fa-pinterest-square fa-3x"> </i>
 </a>
 </li>
 
 <!-- Reddit -->
-<li class="social-btn__reddit">
-<a href="http://reddit.com/submit?url=12-post.html&amp;title=12 Post" target="_blank">
-				<img src="/theme/images/reddit.png" alt="Reddit" />
+<li>
+<a alt="Reddit" href="http://reddit.com/submit?url=12-post.html&amp;title=12 Post" target="_blank">
+<i class="fa fa-reddit-square fa-3x"> </i>
 </a>
 </li>
 
 <!-- Tumblr-->
-<li class="social-btn__tumblr">
-<a href="http://www.tumblr.com/share/link?url=12-post.html&amp;title=" target="_blank">
-				<img src="/theme/images/tumblr.png" alt="Tumblr" />
+<li>
+<a alt="Tumblr" href="http://www.tumblr.com/share/link?url=12-post.html&amp;title=" target="_blank">
+<i class="fa fa-tumblr-square fa-3x"> </i>
 </a>
 </li>
 
 <!-- Twitter -->
-<li class="social-btn__twitter">
-<a href="https://twitter.com/share?url=12-post.html&amp;text=;hashtags=" target="_blank">
-				<img src="/theme/images/twitter-box.png" alt="Twitter" />
+<li>
+<a alt="Twitter" href="https://twitter.com/share?url=12-post.html&amp;text=;hashtags=" target="_blank">
+<i class="fa fa-twitter-square fa-3x"> </i>
 </a>
 </li>
 
 <!-- Email -->
-<li class="social-btn__email">
-<a href="mailto:?Subject=Simple Share Buttons&amp;Body=12 Post 12-post.html">
-				<img src="/theme/images/email-outline.png" alt="Email" />
+<li>
+<a alt="Email" href="mailto:?Subject=12-post.html&amp;Body=12 Post 12-post.html">
+<i class="fa fa-email-square fa-3x"> </i>
 </a>
 </li>
 
-<!-- Print -->
-<li class="social-btn__printer">
-<a href="javascript:;" onclick="window.print()">
-				<img src="/theme/images/printer.png" alt="Print" />
+<!-- Print
+<li>
+<a alt="Print" href="javascript:;" onclick="window.print()">
+<i  class="fa fa-print fa-3x"> </i>
 </a>
 </li>
+-->
 
 </ul>                         </ul>
 
@@ -236,6 +253,7 @@
         </main>
         <div class="mdl-layout__obfuscator"></div>
     </div>
+
 
     </main>
     <div class="mdl-layout__obfuscator"></div>

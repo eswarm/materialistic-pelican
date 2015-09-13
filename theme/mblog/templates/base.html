@@ -24,7 +24,16 @@
 
  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.css">
+ {% if PRIMARY_COLOR is defined and ACCENT_COLOR is defined %}
+ {% set pc = PRIMARY_COLOR | lower | replace(' ','_') %}
+ {% set ac = ACCENT_COLOR | lower | replace(' ','_') %}
+ {% else %}
+ {% set pc = "indigo" | lower %}
+ {% set ac = "pink" | lower %}
+ {% endif %}
+ {% set matName = "material." + pc + "-" + ac + ".min.css" %}
+ <link rel="stylesheet" href= {{ "https://storage.googleapis.com/code.getmdl.io/1.0.4/" + matName }} >
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/mstyles.css" />
 
  {% if FEED_ALL_ATOM %}
@@ -63,41 +72,55 @@
                 <span class="contact-card-name">Eswar Malla</span>
             </div>
         </div>
-        <div class="mdl-card mdl-shadow--2dp">
+        <div class="contact-card mdl-card mdl-shadow--2dp">
             <div class="mdl-card__actions mdl-card--border">
                 <div class="social-buttons">
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__github">
-                        <span class="visuallyhidden">Google Plus</span>
-                    </button>
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-                        <span class="visuallyhidden">Github</span>
-                    </button>
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
-                        <span class="visuallyhidden">Twitter</span>
-                    </button>
+                    {% for s in SOCIAL %}
+                   {% if s[2] %}
+                       {% set name_sanitized = s[2]|lower|replace('+','-plus')|replace(' ','-') %}
+                   {% else %}
+                       {% set name_sanitized = s[0]|lower|replace('+','-plus')|replace(' ','-') %}
+                   {% endif %}
+                   {% if name_sanitized in ['flickr', 'spotify', 'stack-overflow', 'weibo'] %}
+                       {% set iconattributes = '"fa fa-' ~ name_sanitized ~ ' fa-lg"' %}
+                   {% else %}
+                       {% set iconattributes = '"fa fa-' ~ name_sanitized ~ '-square fa-lg"' %}
+                   {% endif %}
+                   <a target="_blank" href="{{ s[1] }}" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent social-anchors"> <i class={{ iconattributes }}></i> </a>
+                   {% endfor %}
                 </div>
             </div>
             <div class="mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__actions mdl-card--border">
-
-                    <h4> Categories </h4>
+                <div class="mdl-color-text--accent mdl-card__actions mdl-card--border">
+                    <h4 class="sub-title"> Categories </h4>
                         {% for cat, null in categories %}
-                          <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
                         {% endfor %}
-
+                </div>
+            </div>
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-color-text--accent mdl-card__actions mdl-card--border">
+                    <h4 class="sub-title"> Tags </h4>
+                        {% for tag, null in tags %}
+                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="{{ SITEURL }}/{{ tag.url }}">{{ cat }}</a>
+                        {% endfor %}
                 </div>
             </div>
           </div>
     </aside>
 
+    {% if NAVBAR_COLOR is defined %}
+    <div class="nav-header mdl-card mdl-cell mdl-cell--12-col mdl-shadow--8dp" style="background-color : {{ NAVBAR_COLOR }};">
+    {% else %}
     <div class="nav-header mdl-card mdl-cell mdl-cell--12-col mdl-shadow--8dp mdl-color--primary">
+    {% endif %}
         <h1 class="mdl-color-text--grey-50"> Eswar's Log </h1>
         <nav class="mdl-navigation">
             <div class="mdl-layout-spacer"></div>
             <span class="topLinks">
-                <a class="mdl-navigation__link" href="/">Home</a>
-                <a class="mdl-navigation__link" href="#">Projects</a>
-                <a class="mdl-navigation__link" href="#">About</a>
+                <a class="mdl-navigation__link" href="{{ SITEURL }}/index.html">Home</a>
+                <a class="mdl-navigation__link" href="{{ SITEURL }}/pages/projects.html">Projects</a>
+                <a class="mdl-navigation__link" href="{{ SITEURL }}/pages/about.html">About</a>
             </span>
         </nav>
     </div>

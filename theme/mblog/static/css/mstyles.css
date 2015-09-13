@@ -104,6 +104,11 @@ body .mblog {
           align-items: center;
    font-size : 16px;
 }
+
+.mdl-card__supporting-text p {
+    font-size : 16px;
+}
+
 .mblog .mdl-card__supporting-text strong {
   font-weight: 400;
 }
@@ -191,7 +196,7 @@ body .mblog {
           order: -1;
 }
 .mblog .coffee-pic .mdl-card__media {
-  background-image: url('images/coffee.jpg');
+  background-image: url('../images/coffee.jpg');
 }
 .mblog .something-else .mdl-card__media {
   display: -webkit-box;
@@ -237,10 +242,10 @@ body .mblog {
   border-bottom-right-radius: 2px;
 }
 .mblog .on-the-road-again .mdl-card__media {
-  background-image: url('images/road.jpg');
+  background-image: url('../images/road.jpg');
 }
 .mblog .shopping .mdl-card__media {
-  background-image: url('images/shopping.jpg');
+  background-image: url('../images/shopping.jpg');
 }
 .mblog .mblog__posts > .m-nav {
   margin: 12px 15px;
@@ -302,10 +307,15 @@ body .mblog {
 .mblog--blogpost .custom-header {
   background-color: transparent;
 }
+
 .mblog--blogpost .mblog__posts > .mdl-card .mdl-card__media {
-  background-image: url('images/road_big.jpg');
   height: 280px;
 }
+
+.mblog--blogpost .mblog__posts > .mdl-card .mdl-card__title {
+  height: 140px;
+}
+
 .mblog--blogpost .comments {
   background-color: #EEE;
 }
@@ -496,7 +506,7 @@ body .mblog {
 .mblog .minilogo {
   width: 44px;
   height: 44px;
-  background-image: url('images/avatar.png');
+  background-image: url('../images/avatar.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -528,19 +538,31 @@ body .mblog {
 .social-btn__email {
    background-image : url('../images/email-outline.png');
    width : 36px;
-   height :36px;
+   height : 36px;
+   background-color: black;
+   background-size: cover;
+   display: block;
+   margin: 2px;
 }
 
 .social-btn__facebook {
    background-image : url('../images/facebook-box.png');
    width : 36px;
    height :36px;
+   background-color: black;
+   background-size: cover;
+   display: block;
+   margin: 2px;
 }
 
 .social-btn__github {
   background-image: url('../images/github-box.png');
   width : 36px;
   height :36px;
+  background-color: black;
+  background-size: cover;
+  display: block;
+  margin: 2px;
 }
 
 .social-btn__gplus {
@@ -548,37 +570,60 @@ body .mblog {
   /* background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_gplus_black_48dp.png'); */
   width : 36px;
   height :36px;
-
+  background-color: black;
+  background-size: cover;
+  display: block;
+  margin: 2px;
 }
 
 .social-btn__linkedin {
    background-image : url('../images/linkedin-box.png');
    width : 36px;
-   height :36px;
+   height : 36px;
+   background-color: black;
+   background-size: cover;
+   display: block;
+   margin: 2px;
 }
 
 .social-btn__pinterest {
    background-image : url('../images/pinterest-box.png');
    width : 36px;
    height :36px;
+   background-color: black;
+   background-size: cover;
+   display: block;
+   margin: 2px;
 }
 
 .social-btn__printer {
    background-image : url('../images/printer.png');
    width : 36px;
    height :36px;
+   background-color: black;
+   background-size: cover;
+   display: block;
+   margin: 2px;
 }
 
 .social-btn__reddit {
    background-image : url('../images/reddit.png');
    width : 36px;
    height :36px;
+/*   background-color: black;*/
+   background-size: cover;
+   display: block;
+   margin: 2px;
 }
 
 .social-btn__tumblr {
    background-image : url('../images/tumblr.png');
    width : 36px;
    height :36px;
+   background-color: black;
+   background-size: cover;
+   display: block;
+   margin: 2px;
 }
 
 .social-btn__twitter {
@@ -586,12 +631,10 @@ body .mblog {
    /* background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_twitter_black_48dp.png'); */
    width : 36px;
    height :36px;
-}
-
-.social-btn__facebook {
-  background-image : url('../images/google-plus-box.png');
-  width : 36px;
-  height :36px;
+   background-color: black;
+   background-size: cover;
+   display: block;
+   margin: 2px;
 }
 
 .social-btn__share {
@@ -632,10 +675,10 @@ aside {
   width: 25%;
   height: 100%;
   position: fixed;
-  top: 200px;
+  top: 20px;
   left: 0;
   padding: 40px;
-  padding-top: 50px;
+  padding-top: 0px;
 }
 }
 @media screen and (max-width: 1024px) {
@@ -643,8 +686,6 @@ aside {
     display : none;
 }
 }
-
-
 
 .title.mdl-card {
  min-height: 0px;
@@ -695,5 +736,43 @@ color : black;
 
 .nav-header.mdl-card {
 min-height: 0px;
-background-color: #263238;
+}
+
+.shareList ul {
+list-style-type: none;
+}
+
+.shareList li {
+list-style-type: none;
+}
+
+.contact-card {
+z-index : 9999;
+}
+
+.social-anchors {
+padding : 10px;
+}
+
+.sub-title {
+border-bottom-color: white;
+align-content: center;
+text-align: center;
+}
+
+/*
+.entry-title {
+    background: rgba(0, 0, 0, 0.2);
+}
+*/
+
+.page-text p {
+    width: 100%;
+    padding: 16px;
+    min-height: 64px;
+    -webkit-box-align: center;
+    webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size : 16px;
 }
