@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--
 <div class="mblog mdl-layout mdl-js-layout">
 <main class="mdl-layout__content">
 <div class="mblog__posts mdl-grid">
+-->
 
-<section id="content">
+<div class="mblog__posts mdl-grid">
+
+<!-- <section id="content"> -->
 {% block content_title %}
 <!-- <h2>All articles</h2> -->
 {% endblock %}
@@ -67,9 +71,10 @@
 {% if articles_page.has_other_pages() %}
     {% include 'pagination.html' %}
 {% endif %}
-</section><!-- /#content -->
+<!-- </section> /#content -->
 {% endblock content %}
-
+<!--
 </div>
 </main>
+-->
 </div>
