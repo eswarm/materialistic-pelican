@@ -31,39 +31,7 @@
 
 <body id="index" class="home">
 
-    <aside>
-        <div class="contact-card-image mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title mdl-card--expand"></div>
-            <div class="mdl-card__actions">
-                <span class="contact-card-name">Eswar Malla</span>
-            </div>
-        </div>
-        <div class="contact-card mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__actions mdl-card--border">
-                <div class="social-buttons">
-                   <a target="_blank" href="https://github.com/eswarm" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent social-anchors"> <i class="fa fa-github-square fa-lg"></i> </a>
-                   <a target="_blank" href="https://plus.google.com/102630360601349400454/about" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent social-anchors"> <i class="fa fa-google-plus-square fa-lg"></i> </a>
-                   <a target="_blank" href="https://twitter.com/eswar_001" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent social-anchors"> <i class="fa fa-twitter-square fa-lg"></i> </a>
-                </div>
-            </div>
-            <div class="mdl-card mdl-shadow--2dp">
-                <div class="mdl-color-text--accent mdl-card__actions mdl-card--border">
-                    <h4 class="sub-title"> Categories </h4>
-                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/10.html">10</a>
-                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/11.html">11</a>
-                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/8.html">8</a>
-                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/9.html">9</a>
-                          <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/five.html">Five</a>
-                </div>
-            </div>
-            <div class="mdl-card mdl-shadow--2dp">
-                <div class="mdl-color-text--accent mdl-card__actions mdl-card--border">
-                    <h4 class="sub-title"> Tags </h4>
-                </div>
-            </div>
-          </div>
-    </aside>
-
+    <!--
     <div class="nav-header mdl-card mdl-cell mdl-cell--12-col mdl-shadow--8dp mdl-color--primary">
         <h1 class="mdl-color-text--grey-50"> Eswar's Log </h1>
         <nav class="mdl-navigation">
@@ -75,10 +43,67 @@
             </span>
         </nav>
     </div>
+   -->
 
-    <div class="mblog mdl-layout mdl-js-layout">
-    <main class="mdl-layout__content">
-
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+                mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title"> Eswar's log </span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+           <a class="mdl-navigation__link" href="./index.html">Home</a>
+           <a class="mdl-navigation__link" href="./pages/projects.html">Projects</a>
+           <a class="mdl-navigation__link" href="./pages/about.html">About</a>
+          </nav>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                      mdl-textfield--floating-label mdl-textfield--align-right">
+            <label class="mdl-button mdl-js-button mdl-button--icon"
+                   for="fixed-header-drawer-exp">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" name="sample"
+                     id="fixed-header-drawer-exp" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <aside>
+            <div class="contact-card-image mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand"></div>
+                <div class="mdl-card__actions">
+                    <span class="contact-card-name">Eswar Malla</span>
+                </div>
+            </div>
+            <div class="contact-card mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="social-buttons">
+                       <a target="_blank" href="https://github.com/eswarm" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent social-anchors"> <i class="fa fa-github-square fa-lg"></i> </a>
+                       <a target="_blank" href="https://plus.google.com/102630360601349400454/about" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent social-anchors"> <i class="fa fa-google-plus-square fa-lg"></i> </a>
+                       <a target="_blank" href="https://twitter.com/eswar_001" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent social-anchors"> <i class="fa fa-twitter-square fa-lg"></i> </a>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-color-text--accent mdl-card__actions mdl-card--border">
+                        <h4 class="sub-title"> Categories </h4>
+                              <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/10.html">10</a>
+                              <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/11.html">11</a>
+                              <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/8.html">8</a>
+                              <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/9.html">9</a>
+                              <a class="mdl-color-text--accent mdl-button mdl-js-button" href="./category/five.html">Five</a>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-color-text--accent mdl-card__actions mdl-card--border">
+                        <h4 class="sub-title"> Tags </h4>
+                    </div>
+                </div>
+              </div>
+        </aside>
+      </div>
+      <main class="mdl-layout__content">
 
 <div class="mblog mdl-layout mdl-js-layout">
 <main class="mdl-layout__content">
@@ -194,10 +219,19 @@
 </nav>
 </div>
 </section><!-- /#content -->
+      </main>
+    </div>
+
+    <!--
+    <div class="mblog mdl-layout mdl-js-layout">
+    <main class="mdl-layout__content">
+
+
 
     </main>
     <div class="mdl-layout__obfuscator"></div>
     </div>
+   -->
 
 
     <!--
