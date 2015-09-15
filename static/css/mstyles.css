@@ -576,10 +576,11 @@ aside {
  padding: 20px;
 }
 
-.topLinks .mdl-navigation__link {
+.mdl-navigation__link {
  margin: auto;
  padding: 30px;
  color: white;
+ font-size: 1em; 
 }
 
 .card-title.mdl-card__title-text {
