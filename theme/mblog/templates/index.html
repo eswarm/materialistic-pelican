@@ -9,9 +9,8 @@
 
 <div class="mblog__posts mdl-grid">
 
-<!-- <section id="content"> -->
+
 {% block content_title %}
-<!-- <h2>All articles</h2> -->
 {% endblock %}
 
 {% for article in articles_page.object_list %}
@@ -72,9 +71,9 @@
     {% include 'pagination.html' %}
 {% endif %}
 <!-- </section> /#content -->
-{% endblock content %}
 <!--
 </div>
 </main>
 -->
 </div>
+{% endblock content %}

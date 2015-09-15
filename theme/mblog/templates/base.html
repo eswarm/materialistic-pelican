@@ -83,14 +83,23 @@
     </div>
    -->
 
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
-                mdl-layout--fixed-header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <h1> <span class="mdl-layout-title"> {{ SITENAME }} </span> </h1>
+          <span class="site-title"> {{ SITENAME }} </span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                       mdl-textfield--floating-label mdl-textfield--align-right">
+
+
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation mdl-cell--hide-phone">
+             <a class="mdl-navigation__link" href="{{ SITEURL }}/index.html">Home</a>
+             <a class="mdl-navigation__link" href="{{ SITEURL }}/pages/projects.html">Projects</a>
+             <a class="mdl-navigation__link" href="{{ SITEURL }}/pages/about.html">About</a>
+            </nav>
+
+            <!--
             <label class="mdl-button mdl-js-button mdl-button--icon"
                    for="fixed-header-drawer-exp">
               <i class="material-icons">search</i>
@@ -99,10 +108,11 @@
               <input class="mdl-textfield__input" type="text" name="sample"
                      id="fixed-header-drawer-exp" />
             </div>
+           -->
           </div>
         </div>
 
-        <div class="mdl-layout__header-row">
+        <div class="mdl-layout__header-row mdl-cell--hide-tablet mdl-cell--hide-desktop">
           <div class="mdl-layout-spacer"></div>
           <nav class="mdl-navigation">
            <a class="mdl-navigation__link" href="{{ SITEURL }}/index.html">Home</a>
@@ -110,6 +120,7 @@
            <a class="mdl-navigation__link" href="{{ SITEURL }}/pages/about.html">About</a>
           </nav>
         </div>
+
       </header>
 
 
@@ -117,7 +128,7 @@
             <div class="contact-card-image mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title mdl-card--expand"></div>
                 <div class="mdl-card__actions">
-                    <span class="contact-card-name">Eswar Malla</span>
+                    <span class="contact-card-name"> {{ AUTHOR }} </span>
                 </div>
             </div>
             <div class="contact-card mdl-card mdl-shadow--2dp">
@@ -139,19 +150,20 @@
                     </div>
                 </div>
                 <div class="mdl-card mdl-shadow--2dp">
-                        <div class="drawer_title mdl-card__title mdl-color--primary mdl-color-text--white sub-title"> Categories </div>
-                        <div>
+                        <div class="drawer_title mdl-color--primary mdl-color-text--white"> Categories </div>
+                        <div class="cat_links">
                             {% for cat, null in categories %}
                               <a class="mdl-color-text--accent mdl-button mdl-js-button" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
                             {% endfor %}
                         </div>
                 </div>
                 <div class="mdl-card mdl-shadow--2dp">
-                    <div class="mdl-color-text--accent mdl-card__actions mdl-card--border">
-                        <h4 class="sub-title"> Tags </h4>
-                            {% for tag, null in tags %}
-                              <a class="mdl-color-text--accent mdl-button mdl-js-button" href="{{ SITEURL }}/{{ tag.url }}">{{ cat }}</a>
-                            {% endfor %}
+                    <div class="drawer_title mdl-color--primary mdl-color-text--white"> Tags
+                    </div>
+                    <div class="nav_links">
+                        {% for tag, null in tags %}
+                           <a class="mdl-color-text--accent mdl-button mdl-js-button" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                        {% endfor %}
                     </div>
                 </div>
               </div>
@@ -159,7 +171,18 @@
       <main class="mblog mdl-layout__content">
        {% block content %}
        {% endblock %}
+
+       <footer class="mdl-mini-footer">
+         <div class="mdl-mini-footer__left-section">
+               <div id="about">
+                Built using <a href="http://github.com/">Material Note theme</a> by <a href="http://eswarm.in">Eswar Malla</a>,
+                Powered by <a href="http://getpelican.com">Pelican</a>.
+               </div>
+         </div>
+       </footer>
+
       </main>
+
     </div>
 
     <!--
@@ -173,37 +196,6 @@
     </div>
    -->
 
-
-    <!--
-        <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer--left-section">
-                <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
-                    <span class="visuallyhidden">Twitter</span>
-                </button>
-                <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
-                    <span class="visuallyhidden">Facebook</span>
-                </button>
-                <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-                    <span class="visuallyhidden">Google Plus</span>
-                </button>
-            </div>
-            <div class="mdl-mini-footer--right-section">
-                <button class="mdl-mini-footer--social-btn social-btn__share">
-                    <i class="material-icons" role="presentation">share</i>
-                    <span class="visuallyhidden">share</span>
-                </button>
-            </div>
-        </footer>
-     -->
-
-        <!--
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address>
-        </footer>
-       -->
         <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
 </body>
 

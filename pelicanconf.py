@@ -35,6 +35,7 @@ DEFAULT_PAGINATION = 4
 #NAVBAR_COLOR = '#263238'
 PRIMARY_COLOR = 'indigo'
 ACCENT_COLOR = 'light blue'
+GOOGLE_PLUS_COMMENTS = True 
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True

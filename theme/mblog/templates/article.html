@@ -128,6 +128,18 @@
                         </button>
                     </a>
                 </nav>
+                {% if GOOGLE_PLUS_COMMENTS %}
+                <script src="https://apis.google.com/js/plusone.js"></script>
+                <div id="comments" class="mdl-cell mdl-cell--12-col"> </div>
+                <script>
+                gapi.comments.render('comments', {
+                 href: window.location,
+                 width: '900',
+                 first_party_property: 'BLOGGER',
+                 view_type: 'FILTERED_POSTMOD'
+                });
+                </script>
+                {% endif %}
             </div>
         <div class="mdl-layout__obfuscator"></div>
     </div>
