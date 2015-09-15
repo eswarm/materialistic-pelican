@@ -9,13 +9,10 @@
 
 <div class="mblog__posts mdl-grid">
 
-
 {% block content_title %}
 {% endblock %}
 
 {% for article in articles_page.object_list %}
-
-
 {% if article.titleimage %}
 <div class="mdl-card mdl-cell mdl-cell--12-col">
     <div class="mdl-card__title mdl-color-text--grey-50 mdl-color--primary" style="background-image : url({{ THEME_STATIC_DIR }}/images/{{ article.titleimage }});">
