@@ -57,6 +57,7 @@ body .mblog {
       -ms-flex-align: stretch;
           align-items: stretch;
   min-height: 360px;
+  height: 100%;
 }
 .mblog .mdl-card__title {
   padding: 16px;
@@ -654,7 +655,7 @@ padding : 16px;
 */
 
 .page-text p {
-    width: 100%;
+    width : calc(100% - 16px);
     padding: 16px;
     min-height: 64px;
     -webkit-box-align: center;
