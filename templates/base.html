@@ -32,7 +32,12 @@
  {% set ac = "pink" | lower %}
  {% endif %}
  {% set matName = "material." + pc + "-" + ac + ".min.css" %}
- <link rel="stylesheet" href= {{ "https://storage.googleapis.com/code.getmdl.io/1.0.4/" + matName }} >
+
+ {% if USE_CDN %}
+ <link rel="stylesheet" href= "https://storage.googleapis.com/code.getmdl.io/1.0.4/{{matName}}" >
+ {% else %}
+ <link rel="stylesheet" href= "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.min.css" >
+ {% endif %}
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/mstyles.css" />
 
@@ -195,8 +200,12 @@
     <div class="mdl-layout__obfuscator"></div>
     </div>
    -->
+   {% if USE_CDN %}
+   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+   {% else %}
+   <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/material.min.js"></script>
+   {% endif %}
 
-        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
 </body>
 
 <script>
