@@ -40,7 +40,7 @@
             <div class="mblog__posts mdl-grid">
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
                  {% if article.titleimage %}
-                    <div class="mdl-card__media mdl-color-text--grey-50 mdl-color--primary" style="background-image : url({{ THEME_STATIC_DIR }}/images/{{ article.titleimage }});">
+                    <div class="mdl-card__media mdl-color-text--grey-50 mdl-color--primary" style="background-image : url({{ SITEURL }}/images/{{ article.titleimage }});">
                      <!-- entry title -->
                      <h3 class="entry-title">
                       <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
@@ -55,7 +55,7 @@
                   </div>
                   {% endif %}
                     <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-                        <div class="minilogo"></div>
+                        <div class="minilogo" style="background-image: url({{USER_AVATAR_URL}})"></div>
                         <div>
 
                          <abbr class="published" title="{{ article.date.isoformat() }}">

@@ -200,9 +200,7 @@ body .mblog {
       -ms-flex-order: -1;
           order: -1;
 }
-.mblog .coffee-pic .mdl-card__media {
-  background-image: url('../images/coffee.jpg');
-}
+
 .mblog .something-else .mdl-card__media {
   display: -webkit-box;
   display: -webkit-flex;
@@ -499,7 +497,7 @@ body .mblog {
 .mblog .minilogo {
   width: 44px;
   height: 44px;
-  background-image: url('../images/avatar.png');
+  /*background-image: url('../images/avatar.png');*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -541,7 +539,7 @@ body .mblog {
 }
 
 .contact-card-image.mdl-card {
-  background: url('../images/logo.png') center / cover;
+  background: center / cover;
 }
 
 .contact-card-image > .mdl-card__actions {
