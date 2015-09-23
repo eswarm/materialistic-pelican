@@ -105,6 +105,9 @@ body .mblog {
    font-size : 16px;
 }
 
+.mblog .mdl-card__supporting-text * {
+    font-size : 16px;
+}
 /*
 .mblog .mdl-card__supporting-text p {
     display : block;
