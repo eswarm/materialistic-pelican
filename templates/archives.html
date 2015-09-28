@@ -1,11 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Archives for {{ SITENAME }}</h1>
 
-<dl>
-{% for article in dates %}
-    <dt>{{ article.locale_date }}</dt>
-    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
-{% endfor %}
-</dl>
+<div class="mblog__posts mdl-grid">
+<div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__title mdl-color-text--grey-50 mdl-color--primary">
+        <h3 class="entry-title"> All articles </h3>
+    </div>
+    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+
+        {% for article in dates %}
+          <div class="archive_link">
+          <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+          </div>
+          <div class="archive_date">
+               {{ article.locale_date }}
+          </div>
+        {% endfor %}
+
+    </div>
+</div>
+</div>
+
 {% endblock %}

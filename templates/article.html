@@ -113,19 +113,34 @@
                 </div>
 
                 <nav class="m-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-                    <a href="index.html" class="m-nav__button">
+                    {% for a in articles %}
+                    {% if a == article %}
+                    {% set article_index = loop.index0 %}
+                    {% if article_index - 1 >= 0 %}
+                    <a href="{{ articles[article_index-1].url }}" class="m-nav__button">
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                             <i class="material-icons">arrow_back</i>
                         </button>
                         Newer
                     </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor  %}
+
                     <div class="section-spacer"></div>
-                    <a href="index.html" class="m-nav__button">
+                    {% for a in articles %}
+                    {% if a == article %}
+                    {% set article_index = loop.index0 %}
+                    {% if article_index + 1 < articles | count %}
+                    <a href= "{{ articles[article_index+1].url }}" class="m-nav__button">
                         Older
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                             <i class="material-icons">arrow_forward</i>
                         </button>
                     </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor  %}
                 </nav>
                 {% if GOOGLE_PLUS_COMMENTS %}
                 <script src="https://apis.google.com/js/plusone.js"></script>
