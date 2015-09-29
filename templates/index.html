@@ -15,7 +15,7 @@
 {% for article in articles_page.object_list %}
 {% if article.titleimage %}
 <div class="mdl-card mdl-cell mdl-cell--12-col">
-    <div class="mdl-card__title mdl-color-text--grey-50 mdl-color--primary" style="background-image : url({{ THEME_STATIC_DIR }}/images/{{ article.titleimage }});">
+    <div class="mdl-card__title mdl-color-text--grey-50 mdl-color--primary" style="background-image : url({{ SITEURL }}/images/{{ article.titleimage }}); background-size:   cover; ">
         <h3 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
     </div>
 
