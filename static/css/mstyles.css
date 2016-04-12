@@ -68,7 +68,7 @@ body .mblog {
   box-sizing: border-box;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;  
+  background-position: center center;
   padding: 24px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -95,7 +95,6 @@ body .mblog {
   color: inherit;
 }
 .mblog .mdl-card__supporting-text {
-  width: 100%;
   padding: 16px;
   min-height: 64px;
   display: -webkit-box;
@@ -664,7 +663,6 @@ padding : 16px;
 .page-text p {
     width : calc(100% - 16px);
     padding: 16px;
-    min-height: 64px;
     -webkit-box-align: center;
     webkit-align-items: center;
     -ms-flex-align: center;
@@ -758,4 +756,22 @@ height : 100%;
     padding : 10px;
     margin-right: 40px;
     text-align: right;
+}
+
+ .project p {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	font-size: 16px;
+	font-weight: 400;
+	min-height: 150px;
+	overflow: hidden;
+	z-index: 1;
+	position: relative;
+	background: #fff;
+	border-radius: 2px;
+	box-sizing: border-box;
 }

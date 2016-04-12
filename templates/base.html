@@ -23,7 +23,8 @@
  <meta name="msapplication-TileColor" content="#3372DF">
 
  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
  {% if PRIMARY_COLOR is defined and ACCENT_COLOR is defined %}
  {% set pc = PRIMARY_COLOR | lower | replace(' ','_') %}
  {% set ac = ACCENT_COLOR | lower | replace(' ','_') %}
@@ -34,11 +35,17 @@
  {% set matName = "material." + pc + "-" + ac + ".min.css" %}
 
  {% if USE_CDN %}
- <link rel="stylesheet" href= "https://storage.googleapis.com/code.getmdl.io/1.0.4/{{matName}}" >
+ <link rel="stylesheet" href= "https://storage.googleapis.com/code.getmdl.io/1.1.3/{{matName}}" >
  {% else %}
  <link rel="stylesheet" href= "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/material.min.css" >
  {% endif %}
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<!--
+ <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/font-awesome/css/font-awesome.min.css" />
+-->
+
  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/mstyles.css" />
 
  {% if FEED_ALL_ATOM %}
@@ -121,7 +128,7 @@
         <div class="mdl-cell--hide-tablet mdl-cell--hide-desktop">
           <div class="mobile-links">
            <a class="mdl-navigation__link_mobile" href="{{ SITEURL }}/index.html">Home</a>
-           <a class="mdl-navigation__link_mobile" href="{{ SITEURL }}/pages/archives.html">Articles</a>
+           <a class="mdl-navigation__link_mobile" href="{{ SITEURL }}/archives.html">Articles</a>
            <a class="mdl-navigation__link_mobile" href="{{ SITEURL }}/pages/projects.html">Projects</a>
            <a class="mdl-navigation__link_mobile" href="{{ SITEURL }}/pages/about.html">About</a>
         </div>
@@ -179,7 +186,7 @@
        {% endblock %}
 
        <footer class="mdl-mini-footer">
-         <div class="mdl-mini-footer__left-section">
+         <div class="mdl-mini-footer__right-section">
                <div id="about">
                 Built using <a href="https://github.com/eswarm/materialistic-pelican">Materialistic Pelican</a> by <a href="http://eswarm.in">Eswar Malla</a>,
                 Powered by <a href="http://getpelican.com">Pelican</a>.
@@ -202,7 +209,7 @@
     </div>
    -->
    {% if USE_CDN %}
-   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
    {% else %}
    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/material.min.js"></script>
    {% endif %}
