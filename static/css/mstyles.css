@@ -1,3 +1,4 @@
+
 body::before {
     background-color: grey;
     background-size: cover;
@@ -12,8 +13,24 @@ body::before {
     position: fixed;
 }
 
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body .mblog h1, h2, h3, h4, h5, h6 {
+ font-family: 'Open Sans', sans-serif;
+ /* font-family: 'Roboto', 'Helvetica', sans-serif;*/
+}
+
+
 body .mblog {
-  font-family: 'Roboto', 'Helvetica', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 .mblog .mblog__posts {
@@ -56,7 +73,7 @@ body .mblog {
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  min-height: 360px;
+  min-height: 240px;
   height: 100%;
 }
 .mblog .mdl-card__title {
@@ -94,6 +111,7 @@ body .mblog {
 .mblog .mdl-card__title a {
   color: inherit;
 }
+
 .mblog .mdl-card__supporting-text {
   padding: 16px;
   min-height: 64px;
@@ -103,14 +121,18 @@ body .mblog {
   display: block;
   -webkit-box-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-   font-size : 16px;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size : 16px;
+  margin : auto;
+  margin-bottom: 0px;
+  font-family: 'Merriweather', serif;
 }
 
-.mblog .mdl-card__supporting-text * {
-    font-size : 16px;
+.mblog .mdl-card__supporting-text table {
+    width: 100%;
 }
+
 /*
 .mblog .mdl-card__supporting-text p {
     display : block;
@@ -119,7 +141,15 @@ body .mblog {
 
 .mdl-card__supporting-text p {
     font-size : 16px;
+    font-weight: 300;
 }
+
+
+.mdl-card__supporting-text * {
+    font-size : 16px;
+    font-weight: 300;
+}
+
 
 .mblog .mdl-card__supporting-text strong {
   font-weight: 400;
@@ -138,6 +168,7 @@ body .mblog {
 .mblog .mdl-card__actions:first-child {
   margin-left: 0;
 }
+
 .mblog .meta {
   box-sizing: border-box;
   padding: 16px;
@@ -159,7 +190,10 @@ body .mblog {
       -ms-flex-pack: start;
           justify-content: flex-start;
   height: auto;
+  margin : 0px;
+  width : 100%;
 }
+
 .mblog .meta > .meta__favorites{
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -195,12 +229,14 @@ body .mblog {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
 .mblog.is-small-screen .mblog__posts > .mdl-card.coffee-pic {
   -webkit-box-ordinal-group: 1;
   -webkit-order: 0;
       -ms-flex-order: 0;
           order: 0;
 }
+
 .mblog.is-small-screen .mblog__posts > .mdl-card.something-else {
   -webkit-box-ordinal-group: 0;
   -webkit-order: -1;
@@ -227,6 +263,7 @@ body .mblog {
       -ms-flex-align: center;
           align-items: center;
 }
+
 .mblog .something-else > button {
   position: absolute;
   top: 0;
@@ -235,17 +272,20 @@ body .mblog {
       -ms-transform: translate(0px, -28px);
           transform: translate(0px, -28px);
 }
+
 .mblog .something-else .mdl-card__media {
   font-size: 13px;
   font-weight: 500;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
+
 .mblog .something-else .mdl-card__media img {
   width: 64px;
   height: 64px;
   margin-bottom: 10px;
 }
+
 .mblog .something-else .mdl-card__supporting-text {
   background-color: #F5F5F5;
   border-bottom-left-radius: 2px;
@@ -293,22 +333,49 @@ body .mblog {
   text-decoration: none;
   font-weight: inherit;
 }
+
 .mblog .mdl-card h3 {
   margin: 0;
 }
+
 .mblog .mdl-card h3 a {
   text-decoration: none;
 }
+
 .mblog .mdl-card h3.quote:before, .mblog .mdl-card h3.quote:after {
   display: block;
   margin-top: 0.5em;
 }
+
+
 .mblog .mdl-card h3.quote:before {
   content: '“';
 }
+
 .mblog .mdl-card h3.quote:after {
   content: '”';
 }
+
+blockquote:before {
+    content: "";
+    content: none;
+}
+
+blockquote:after {
+    content: "";
+    content: none;
+}
+
+blockquote {
+    border-left: 5px solid #607D8B;
+    padding: 10px;
+    text-align: justify;
+    background-color: #EEE;
+    color : #000;
+    font-style: normal;
+    font-family: 'Merriweather', serif;
+}
+
 .mblog--blogpost .custom-header {
   background-color: transparent;
 }
@@ -322,6 +389,8 @@ body .mblog {
       -ms-flex-align: center;
           align-items: center;
 }
+
+/*
 .mblog--blogpost .meta + .mdl-card__supporting-text {
   border: 0;
   display: -webkit-box;
@@ -334,6 +403,7 @@ body .mblog {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
 .mblog--blogpost .meta + .mdl-card__supporting-text p {
   max-width: 512px;
   margin: 16px auto;
@@ -378,9 +448,10 @@ body .mblog {
   margin-right: 16px;
   color: rgb(97, 97, 97);
 }
-/* Workaround for Firefox.
+
+ /* Workaround for Firefox.
  * User agent stylesheet kept overwriting the font in FF only.
- */
+
 .mblog--blogpost .comments > form .mdl-textfield .mdl-textfield__input {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
@@ -479,6 +550,7 @@ body .mblog {
   padding-top: 32px;
   padding-left: 48px;
 }
+*/
 
 .mblog--blogpost .m-back {
   position: absolute;
@@ -494,13 +566,12 @@ body .mblog {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
+
 .mblog .something-else {
   overflow: visible;
   z-index: 10;
 }
-.mblog .amazing .mdl-card__title {
-  /*background-color: #263238;*/
-}
+
 .mblog .minilogo {
   width: 44px;
   height: 44px;

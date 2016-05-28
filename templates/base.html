@@ -22,7 +22,12 @@
  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
  <meta name="msapplication-TileColor" content="#3372DF">
 
+<!--
  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+-->
+ <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
  {% if PRIMARY_COLOR is defined and ACCENT_COLOR is defined %}
@@ -47,6 +52,8 @@
 -->
 
  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/mstyles.css" />
+ <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygment.css" />
+
 
  {% if FEED_ALL_ATOM %}
  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
@@ -108,7 +115,7 @@
             <nav class="mdl-navigation mdl-cell--hide-phone">
              <a class="topLinks mdl-navigation__link" href="{{ SITEURL }}/index.html">Home</a>
              <a class="topLinks mdl-navigation__link" href="{{ SITEURL }}/archives.html">Articles</a>
-             <a class="topLinks mdl-navigation__link" href="{{ SITEURL }}/pages/projects.html">Projects</a>
+             <a class="topLinks mdl-navigation__link" href="{{ SITEURL }}/category/projects.html">Projects</a>
              <a class="topLinks mdl-navigation__link" href="{{ SITEURL }}/pages/about.html">About</a>
             </nav>
 
